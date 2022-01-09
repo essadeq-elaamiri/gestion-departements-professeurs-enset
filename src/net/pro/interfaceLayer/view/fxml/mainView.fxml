@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="920.0" style="-fx-background-color: #2c3e50;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.pro.interfaceLayer.controller.MainController">
+   <top>
+      <AnchorPane prefHeight="65.0" prefWidth="709.0" style="-fx-background-color: #34495e;" styleClass="header" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="closeBtn" layoutX="889.0" layoutY="6.0" mnemonicParsing="false" onAction="#closeApp" style="-fx-background-color: #e74c3c;" styleClass="closeBtn">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.2em" />
+               </graphic>
+            </Button>
+            <Label layoutX="21.0" layoutY="6.0" style="-fx-text-fill: #ecf0f1; -fx-font-weight: bold;" styleClass="Title" text="ENSET-M">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="37.0" style="-fx-text-fill: #ecf0f1;" styleClass="subtitle" text="Gestion des professeurs" />
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <VBox prefHeight="436.0" prefWidth="153.0" style="-fx-background-color: #34495e;" styleClass="sideBar" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="profGestBtn" alignment="BASELINE_LEFT" graphicTextGap="9.0" onAction="#openProfGestion" prefHeight="60.0" prefWidth="153.0" style="-fx-font-weight: bold;" styleClass="sideBarButton" text="Professeurs">
+               <graphic>
+                  <FontAwesomeIcon fill="#ecf0f1" glyphName="USERS" size="1.5em" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="departGestBtn" alignment="BASELINE_LEFT" graphicTextGap="9.0" onAction="#openDepartGestion" prefHeight="60.0" prefWidth="153.0" style="-fx-font-weight: bold;" styleClass="sideBarButton" text="Departements">
+               <graphic>
+                  <FontAwesomeIcon fill="#ecf0f1" glyphName="BUILDING" size="1.5em" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="aboutBtn" alignment="BASELINE_LEFT" graphicTextGap="9.0" onAction="#openAboutPage" prefHeight="60.0" prefWidth="153.0" style="-fx-font-weight: bold;" styleClass="sideBarButton" text="About">
+               <graphic>
+                  <FontAwesomeIcon fill="#ecf0f1" glyphName="CODE" size="1.5em" />
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="editProfPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="767.0" style="-fx-background-color: #2c3e50;" stylesheets="@../css/main.css">
+                     <children>
+                        <Label layoutX="95.0" layoutY="8.0" style="-fx-text-fill: #ecf0f1;" text="Modifier un professeur">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="100.0" layoutY="51.0">
+                           <children>
+                              <AnchorPane prefHeight="405.0" prefWidth="531.0" style="-fx-background-color: #ecf0f1;">
+                                 <children>
+                                    <TextField fx:id="editProfNomField" layoutX="60.0" layoutY="47.0" prefHeight="30.0" prefWidth="400.0" promptText="Nom" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="editProfPrenomField" layoutX="60.0" layoutY="87.0" prefHeight="30.0" prefWidth="400.0" promptText="Prenom" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="editProfCINField" layoutX="60.0" layoutY="128.0" prefHeight="30.0" prefWidth="400.0" promptText="CIN" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <AnchorPane fx:id="errorsPaneEdit" prefHeight="43.0" prefWidth="531.0">
+                                       <children>
+                                          <Label fx:id="labelPaneErrorsEdit" alignment="CENTER" layoutX="14.0" layoutY="13.0" prefHeight="20.0" prefWidth="511.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <TextField fx:id="editProfAdresseField" layoutX="60.0" layoutY="167.0" prefHeight="30.0" prefWidth="400.0" promptText="Adresse" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="editProfTeleField" layoutX="60.0" layoutY="207.0" prefHeight="30.0" prefWidth="400.0" promptText="Telephone" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="editProfEmailField" layoutX="60.0" layoutY="248.0" prefHeight="30.0" prefWidth="400.0" promptText="Email" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <DatePicker fx:id="editProfDateField" layoutX="60.0" layoutY="289.0" prefHeight="30.0" prefWidth="400.0" promptText="Date rectrutement" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <JFXButton layoutX="366.0" layoutY="365.0" onAction="#saveEditingProfesseur" prefHeight="32.0" prefWidth="94.0" style="-fx-background-color: #27ae60; -fx-border-radius: 20; -fx-font-weight: bold;" text="Modifier" textFill="#2c3e50">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton layoutX="59.0" layoutY="365.0" onAction="#cancelEdittingProf" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #2c3e50; -fx-border-radius: 20; -fx-font-weight: bold;" text="Cancel" textFill="#2c3e50">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <ChoiceBox fx:id="editProfDeparField" layoutX="59.0" layoutY="329.0" prefHeight="27.0" prefWidth="400.0" style="-fx-background-color: #fff;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children></Pane>
+            <Pane fx:id="addProfPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="767.0" style="-fx-background-color: #2c3e50;" stylesheets="@../css/main.css">
+                     <children>
+                        <Label layoutX="95.0" layoutY="8.0" style="-fx-text-fill: #ecf0f1;" text="Ajouter un professeur">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="100.0" layoutY="51.0">
+                           <children>
+                              <AnchorPane prefHeight="405.0" prefWidth="531.0" style="-fx-background-color: #ecf0f1;">
+                                 <children>
+                                    <TextField fx:id="addProfNomField" layoutX="60.0" layoutY="47.0" prefHeight="30.0" prefWidth="400.0" promptText="Nom" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="addProfPrenomField" layoutX="60.0" layoutY="87.0" prefHeight="30.0" prefWidth="400.0" promptText="Prenom" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="addProfCINField" layoutX="60.0" layoutY="128.0" prefHeight="30.0" prefWidth="400.0" promptText="CIN" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <AnchorPane fx:id="addProfErrorsPane" prefHeight="43.0" prefWidth="531.0">
+                                       <children>
+                                          <Label fx:id="addProfErrorsLabel" alignment="CENTER" layoutX="14.0" layoutY="13.0" prefHeight="20.0" prefWidth="511.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <TextField fx:id="addProfAdresseField" layoutX="60.0" layoutY="167.0" prefHeight="30.0" prefWidth="400.0" promptText="Adresse" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="addProfTeleField" layoutX="60.0" layoutY="207.0" prefHeight="30.0" prefWidth="400.0" promptText="Telephone" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <TextField fx:id="addProfEmailField" layoutX="60.0" layoutY="248.0" prefHeight="30.0" prefWidth="400.0" promptText="Email" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <DatePicker fx:id="addProfDateField" layoutX="60.0" layoutY="289.0" prefHeight="30.0" prefWidth="400.0" promptText="Date rectrutement" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 0;" AnchorPane.leftAnchor="60.0" />
+                                    <JFXButton layoutX="378.0" layoutY="365.0" onAction="#saveAddingProfesseur" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #27ae60; -fx-border-radius: 20; -fx-font-weight: bold;" text="Ajouter" textFill="#2c3e50">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton layoutX="59.0" layoutY="365.0" onAction="#cancelAddingProf" prefHeight="32.0" prefWidth="82.0" style="-fx-background-color: #2c3e50; -fx-border-radius: 20; -fx-font-weight: bold;" text="Cancel" textFill="#2c3e50">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <ChoiceBox fx:id="addProfDeparField" layoutX="59.0" layoutY="325.0" prefHeight="31.0" prefWidth="400.0" style="-fx-background-color: #fff; -fx-text-fill: #2c3e50;" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children></Pane>
+            <Pane fx:id="gestionDepartPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="767.0" style="-fx-background-color: #2c3e50;" stylesheets="@../css/main.css">
+                     <children>
+                        <Label layoutX="10.0" layoutY="7.0" style="-fx-text-fill: #f1c40f; -fx-font-weight: bold;" text="Gestion des departements">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="saveDepartBtn" layoutX="518.0" layoutY="223.0" onAction="#saveDepartement" prefHeight="32.0" prefWidth="237.0" style="-fx-background-color: #27ae60; -fx-border-color: #bdc3c7;" text="Enregistrer">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                           </graphic>
+                        </JFXButton>
+                        <TextField fx:id="searchDepartField" layoutX="14.0" layoutY="45.0" onAction="#searchDepartement" prefHeight="25.0" prefWidth="738.0" promptText="Chercher..." style="-fx-background-color: transparent; -fx-border-color: #bdc3c7; -fx-border-radius: 30; -fx-text-fill: #bdc3c7;" />
+                        <FontAwesomeIcon fill="#bdc3c7" glyphName="SEARCH" layoutX="734.0" layoutY="62.0" />
+                        <ListView fx:id="listDepart" layoutX="15.0" layoutY="87.0" prefHeight="367.0" prefWidth="495.0" style="-fx-background-color: #34495e; -fx-text-fill: #ecf0f1;">
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem fx:id="editDepartContextMenu" mnemonicParsing="false" onAction="#editDepartContext" text="Edit" />
+                                    <MenuItem fx:id="deleteDepartContextMenu" mnemonicParsing="false" onAction="#deleteDepartContext" text="Delete" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </ListView>
+                        <TextField fx:id="addDepartField" layoutX="518.0" layoutY="179.0" prefHeight="34.0" prefWidth="237.0" promptText="Nom departement" style="-fx-background-color: transparent; -fx-border-color: #bdc3c7; -fx-text-fill: #bdc3c7;" />
+                        <Label fx:id="ajouterDepartLabel" layoutX="518.0" layoutY="87.0" prefHeight="17.0" prefWidth="238.0" text="Ajouter un departement" textFill="#ecf0f1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="addDepartErrorsPane" layoutX="518.0" layoutY="122.0" prefHeight="34.0" prefWidth="237.0">
+                           <children>
+                              <Label fx:id="addDepartErrorsLabel" alignment="CENTER" layoutX="6.0" layoutY="9.0" prefHeight="17.0" prefWidth="222.0" textFill="#ecf0f1" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="gestionProfPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="767.0" style="-fx-background-color: #2c3e50;" stylesheets="@../css/main.css">
+                     <children>
+                        <Label layoutX="11.0" layoutY="4.0" style="-fx-text-fill: #f1c40f; -fx-font-weight: bold;" text="Gestion des professeurs">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="addProfBtn" layoutX="589.0" layoutY="6.0" onAction="#addProfesseur" prefHeight="32.0" prefWidth="162.0" style="-fx-background-color: #27ae60; -fx-border-color: #ecf0f1;" text="Ajouter un professeur">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                           </graphic>
+                        </JFXButton>
+                        <TextField fx:id="searchProfField" layoutX="361.0" layoutY="45.0" onAction="#searchProfesseur" prefHeight="25.0" prefWidth="391.0" promptText="Chercher..." style="-fx-background-color: transparent; -fx-text-fill: #fff; -fx-border-color: #95a5a6; -fx-border-radius: 25;" />
+                        <TableView fx:id="professeursTable" layoutX="14.0" layoutY="79.0" prefHeight="386.0" prefWidth="738.0" style="-fx-background-color: #34495e;">
+                           <columns>
+                              <TableColumn fx:id="nomTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Nom" />
+                              <TableColumn fx:id="prenomTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Prenom" />
+                              <TableColumn fx:id="cinTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="CIN" />
+                              <TableColumn fx:id="adresseTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Adresse" />
+                              <TableColumn fx:id="teleTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Telephone" />
+                              <TableColumn fx:id="emailTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Email" />
+                              <TableColumn fx:id="dateTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Date de ructrutement" />
+                              <TableColumn fx:id="departementTableCol" editable="false" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="-1.0" text="Departement" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem fx:id="editProfesseurMenuItem" mnemonicParsing="false" onAction="#editProfesseur" text="Edit" />
+                                    <MenuItem fx:id="deleProfesseurMenuItem" mnemonicParsing="false" onAction="#deleteProfesseur" text="Delete" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <FontAwesomeIcon fill="#95a5a6" glyphName="SEARCH" layoutX="734.0" layoutY="62.0" />
+                        <ChoiceBox fx:id="departementFilterField" layoutX="15.0" layoutY="45.0" prefHeight="27.0" prefWidth="272.0" style="-fx-background-color: #bdc3c7; -fx-border-color: #95a5a6; -fx-text-fill: #2c3e50;" />
+                        <JFXButton fx:id="filterBtn" layoutX="295.0" layoutY="46.0" onAction="#filterProfWithDepart" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #16a085;" text="Filter">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="FILTER" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

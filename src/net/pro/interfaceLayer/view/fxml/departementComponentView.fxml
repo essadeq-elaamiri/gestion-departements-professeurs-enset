@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="departementComponentRoot" prefHeight="64.0" prefWidth="698.0" style="-fx-border-radius: 30; -fx-background-color: #2c3e50; -fx-text-fill: #fff;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.pro.interfaceLayer.controller.DepartementComponentController">
+   <children>
+      <Button layoutX="650.0" layoutY="20.0" mnemonicParsing="false">
+         <graphic>
+            <FontAwesomeIcon fx:id="DeleteBtn" fill="WHITE" glyphName="TRASH" onDragDetected="#deleteDepartement" />
+         </graphic>
+      </Button>
+      <Label layoutX="28.0" layoutY="24.0" prefHeight="17.0" prefWidth="564.0" style="-fx-text-fill: #ecf0f1; -fx-font-size: 15; -fx-font-weight: bold;" stylesheets="@../css/main.css" text="Departement Mathematique et informatique " />
+      <Button fx:id="EditBtn" layoutX="608.0" layoutY="16.0" mnemonicParsing="false" onAction="#EditDepartement" style="-fx-background-color: transparent; -fx-font-size: 15; -fx-border-color: #ecf0f1;">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" glyphName="EDIT" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
